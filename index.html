@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Tahoma, serif;
+            color: black;
+            background-color: lightgreen;
+            padding: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 25px;
+            text-shadow: 3px 3px 3px lightblue;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        input[type=button]:hover {
+            background-color: yellow;
+        }
+
+        .bordered {
+            border: 1px solid black;
+            padding: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Резюме</h1>
+    <img src="https://petset.com/wp-content/uploads/2016/05/Top-10-Most-Famous-Internet-Cats-09-Garfi-the-Angry-Cat-300x300.jpg" alt="Фото">
+    <div id="name" class="bordered">Имя: <span id="firstName">Михаил</span></div>
+    <div id="surname" class="bordered">Фамилия: <span id="lastName">Синельников</span></div>
+    <div class="bordered">Возраст: <span id="age">20</span></div>
+    <input type="text" id="newLastName" placeholder="Новая фамилия">
+    <input type="button" value="Изменить фамилию" onclick="changeLastName()">
+    <input type="button" value="Изменить цвет фона" onclick="changeBgColor()">
+
+    <script>
+        function changeLastName() {
+            var newLastName = document.getElementById('newLastName').value;
+            if (newLastName) {
+                document.getElementById('lastName').textContent = newLastName;
+            }
+        }
+
+        function changeBgColor() {
+            var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
